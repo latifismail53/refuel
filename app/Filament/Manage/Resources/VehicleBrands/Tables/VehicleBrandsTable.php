@@ -19,11 +19,9 @@ class VehicleBrandsTable
     {
         return $table
             ->columns([
+                ImageColumn::make('image'),
                 TextColumn::make('name')
                     ->searchable(),
-                TextColumn::make('slug')
-                    ->searchable(),
-                ImageColumn::make('image'),
                 TextColumn::make('description')
                     ->searchable(),
                 TextColumn::make('deleted_at')

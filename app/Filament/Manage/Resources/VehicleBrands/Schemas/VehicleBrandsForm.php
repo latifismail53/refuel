@@ -4,6 +4,7 @@ namespace App\Filament\Manage\Resources\VehicleBrands\Schemas;
 
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class VehicleBrandsForm
@@ -12,13 +13,21 @@ class VehicleBrandsForm
     {
         return $schema
             ->components([
-                TextInput::make('name')
-                    ->required(),
-                TextInput::make('slug')
-                    ->required(),
-                FileUpload::make('image')
-                    ->image(),
-                TextInput::make('description'),
+                Section::make('General')
+                    ->schema([
+                        TextInput::make('name')
+                            ->required(),
+                        TextInput::make('slug')
+                            ->required(),
+                        TextInput::make('description')
+                    ]),
+                Section::make('Brand Image')
+                    ->schema([
+                        FileUpload::make('image')
+                            ->label('Upload Image')
+                            ->directory('vehicle-brands')
+                            ->image()
+                    ])
             ]);
     }
 }
