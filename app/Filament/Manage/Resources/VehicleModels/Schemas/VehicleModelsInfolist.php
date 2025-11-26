@@ -12,11 +12,11 @@ class VehicleModelsInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('vehicle_brand_id')
+                TextEntry::make('vehicleBrand.name')
+                    ->label('Brand')
                     ->numeric(),
                 TextEntry::make('name'),
                 TextEntry::make('slug'),
-                ImageEntry::make('image'),
                 TextEntry::make('description'),
                 TextEntry::make('deleted_at')
                     ->dateTime(),

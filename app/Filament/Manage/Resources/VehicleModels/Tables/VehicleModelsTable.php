@@ -19,12 +19,9 @@ class VehicleModelsTable
     {
         return $table
             ->columns([
-                TextColumn::make('brand_id')
-                    ->numeric()
+                TextColumn::make('vehicleBrand.name')
                     ->sortable(),
                 TextColumn::make('name')
-                    ->searchable(),
-                TextColumn::make('slug')
                     ->searchable(),
                 ImageColumn::make('image'),
                 TextColumn::make('description')
