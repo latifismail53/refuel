@@ -47,4 +47,13 @@ class Vehicles extends Model
     {
         return $this->vehicleModel?->name;
     }
+
+    protected function casts()
+    {
+        return [
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
+            'deleted_at' => 'datetime',
+        ];
+    }
 }

@@ -18,9 +18,6 @@ class VehiclesTable
     {
         return $table
             ->columns([
-                TextColumn::make('user.name')
-                    ->numeric()
-                    ->sortable(),
                 TextColumn::make('vehicleType.name')
                     ->numeric()
                     ->sortable(),
@@ -30,6 +27,8 @@ class VehiclesTable
                 TextColumn::make('vehicleModel.name')
                     ->numeric()
                     ->sortable(),
+                TextColumn::make('registration_number')
+                    ->searchable(),
                 TextColumn::make('year'),
                 TextColumn::make('tank_capacity')
                     ->numeric()
@@ -37,8 +36,7 @@ class VehiclesTable
                 TextColumn::make('efficiency')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('registration_number')
-                    ->searchable(),
+
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

@@ -27,10 +27,13 @@ class VehiclesResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'model_name';
 
+    protected static ?string $navigationLabel = 'My Vehicles';
+
     public static function form(Schema $schema): Schema
     {
         return VehiclesForm::configure($schema);
     }
+
 
     public static function infolist(Schema $schema): Schema
     {
